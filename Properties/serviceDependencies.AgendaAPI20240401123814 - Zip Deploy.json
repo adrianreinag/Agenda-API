@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/AgendaAPIcursonet/apis/AgendaAPI",
+      "type": "apis.azure"
+    },
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/AgendaAPI20240401123814/providers/Microsoft.ServiceLinker/linkers/ADO.NETautenticacionSQL_8FB5609AA2",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/agendaserverdatabase/databases/Agenda",
+      "type": "mssql.azure",
+      "connectionId": "ADO.NET(autenticacionSQL)",
+      "dynamicId": null
+    }
+  }
+}

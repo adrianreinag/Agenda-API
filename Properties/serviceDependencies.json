@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "apis1": {
+      "type": "apis"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ADO.NET(autenticacionSQL)",
+      "dynamicId": null
+    }
+  }
+}

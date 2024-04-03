@@ -1,0 +1,180 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Agenda",
+    "description": "API desarrollada para la aplicación Agenda"
+  },
+  "paths": {
+    "/api/contactos": {
+      "get": {
+        "tags": [
+          "AgendaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/contactos/nombre": {
+      "get": {
+        "tags": [
+          "AgendaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "nombre",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/citas": {
+      "get": {
+        "tags": [
+          "AgendaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/citas/fecha": {
+      "get": {
+        "tags": [
+          "AgendaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "fechaHora",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/citas/idContacto": {
+      "get": {
+        "tags": [
+          "AgendaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "idContacto",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/contacto": {
+      "post": {
+        "tags": [
+          "AgendaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ContactoRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/cita": {
+      "post": {
+        "tags": [
+          "AgendaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CitaRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CitaRequest": {
+      "type": "object",
+      "properties": {
+        "fechaHora": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "descripcion": {
+          "type": "string"
+        },
+        "idContacto": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "ContactoRequest": {
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string"
+        },
+        "apellidos": {
+          "type": "string"
+        },
+        "telefono": {
+          "type": "string"
+        },
+        "localidad": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
